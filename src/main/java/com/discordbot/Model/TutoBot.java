@@ -1,5 +1,7 @@
 package com.discordbot.Model;
 
+import com.discordbot.Controler.EmoteReactControler;
+
 import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
@@ -27,6 +29,7 @@ public class TutoBot {
         botBuilder.setStatus(OnlineStatus.IDLE);
         botBuilder.setActivity(Activity.listening("Hating Madrid"));
         shardManager = botBuilder.build();
+        shardManager.addEventListener(new EmoteReactControler());
     }
 
 }
